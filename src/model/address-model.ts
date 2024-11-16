@@ -9,7 +9,25 @@ export type AddressResponse = {
   postal_code: string;
 };
 
-export type AddressRequest = {
+export type CreateAddressRequest = {
+  contact_id: number;
+  street?: string | null;
+  city?: string | null;
+  province?: string | null;
+  country: string;
+  postal_code: string;
+};
+
+export type GetAddressRequest = {
+  contact_id: number;
+  id: number;
+};
+
+export type RemoveAddressRequest = GetAddressRequest;
+
+export type UpdateAddressRequest = {
+  id: number;
+  contact_id: number;
   street?: string | null;
   city?: string | null;
   province?: string | null;
